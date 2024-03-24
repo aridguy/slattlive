@@ -56,7 +56,12 @@
             PLUTO' is launched</small
           >
           <form>
-            <input type="email" name="email" placeholder="email" />
+            <input
+              type="email"
+              name="email"
+              placeholder="email"
+              id="inputField"
+            />
             <button class="btn btn-secondary">Subscribe</button>
           </form>
         </div>
@@ -70,25 +75,6 @@
         &copy; SLATTLIFE 2024
       </address>
     </div>
-
-    <!-- <section class="overlay container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="newsletter-bg">
-                    <div class="newsletter-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <form>
-                                    <input type="email" name="email" placeholder="email">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
     <script>
       function trigger() {
         Swal.fire({
@@ -97,6 +83,40 @@
           icon: "success",
         });
       }
+    </script>
+    <script>
+      // Array of placeholder texts
+      const placeholderTexts = [
+        "Welcome to SlattLive",
+        "Subscribe now",
+        "Get notifications as we launch",
+      ];
+      let currentIndex = 0;
+      let currentText = "";
+      let currentTextIndex = 0;
+      let typingInterval;
+
+      function typePlaceholder() {
+        if (currentTextIndex < placeholderTexts[currentIndex].length) {
+          currentText += placeholderTexts[currentIndex][currentTextIndex++];
+          document
+            .getElementById("inputField")
+            .setAttribute("placeholder", currentText);
+        } else {
+          clearInterval(typingInterval);
+          currentText = "";
+          currentTextIndex = 0;
+          currentIndex = (currentIndex + 1) % placeholderTexts.length;
+          setTimeout(() => {
+            typingInterval = setInterval(typePlaceholder, 100); // Typing speed (milliseconds)
+          }, 1500); // Delay between sentences (milliseconds)
+        }
+      }
+
+      // Start typing the placeholder text when the page loads
+      window.onload = function () {
+        typingInterval = setInterval(typePlaceholder, 100); // Typing speed (milliseconds)
+      };
     </script>
   </body>
 </html>

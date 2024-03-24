@@ -350,3 +350,7 @@ input:focus{
         margin-top: 16em;
     }
   }
+
+  input::placeholder {
+    color: #fff; /* Set placeholder color to white */
+  }
