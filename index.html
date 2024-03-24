@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SLATTLIFE</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="./style.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  </head>
+  <body class="relative h-screen w-screen">
+    <div class="absolute h-screen w-screen z-10">
+      <img
+        class="z-1000 bg-transparent absolute h-screen w-screen"
+        src="./images/frame.png"
+        alt="bg"
+      />
+    </div>
+    <div
+      class="absolute top-0 w-full h-full stroke-lines bg-gray-500 z-4 glitchs"
+    >
+      <p class="fades-in w-full h-full bg-black"></p>
+    </div>
+    <div
+      class="fades-in w-full h-full z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 absolute"
+    >
+      <div class="flex flex-col justify-center items-center h-full">
+        <img
+          class="logo mb-5"
+          src="./images/brand_name_white.svg"
+          alt="logo-brand"
+        />
+        <div class="text-center">
+          <div class="homeSlider">
+            <marquee
+              >🏁This Community Creative Website by Only1eric (itz_microsoft) is
+              for creative and determine young people. It's purpose is to
+              empower Nigerian's and youths all over the universe to connect to
+              art scene, entertainment and networking around the universe with
+              the Nigerian Inspired Music, America Hiphop/Rap Music, Fashion,
+              Street+Style, Instinct and Culture. The goal is to showcase the
+              Nigerian talents, Art Scene, Street+Style Fashion , Culture (Black
+              Lives) and Empower Small Scale Businesses through the Community's
+              Website. Website Design Interface; Reference By GO CRZY 🏁
+            </marquee>
+          </div>
+          <small class="text-white text-center pluto"
+            >Be the first to get notification when 'PROJEKT
+            PLUTO' is launched</small
+          >
+          <form>
+            <input type="email" name="email" placeholder="email" />
+            <button class="btn btn-secondary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="relative text-center startBox">
+        <div onclick="trigger()" class="press-start cursor">
+          <span class="blinking-text">></span>Press Start
+        </div>
+      </div>
+      <address class="relative copyrights bottom-40 startBox text-center">
+        &copy; SLATTLIFE 2024
+      </address>
+    </div>
+
+    <!-- <section class="overlay container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="newsletter-bg">
+                    <div class="newsletter-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form>
+                                    <input type="email" name="email" placeholder="email">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <script>
+      function trigger() {
+        Swal.fire({
+          title: "Good job!",
+          text: "You clicked the button!",
+          icon: "success",
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,352 @@
+/* IMPORTING FONT INTO THE APPLICATION */
+@font-face {
+    font-family: "kwark";
+    src: url("/public/fonts/kwark.ttf") format("ttf"),
+      /* Format for modern browsers */ url("fonts/kwark.ttf") format("ttf"); /* Format for older browsers */
+  }
+  @font-face{
+    font-family:"lomanoid";
+    src: url("fonts/lomanoid.ttf") format("ttf"),
+    /* Format for modern browsers / url("fonts/lomanoid.ttf") format("ttf"); / Format for older browsers */
+  }
+  @font-face{
+    font-family: "arcade";
+    src: url("/public/fonts/arcade.TTF") format("TTF"),
+      /* Format for modern browsers / url("fonts/arcade.ttf") format("ttf"); / Format for older browsers */
+  }
+  @font-face{
+    font-family: "azonix";
+    src: url("../fonts/azonix.otf") format("otf"),
+      /* Format for modern browsers / url("fonts/azonix.otf") format("azonix"); / Format for older browsers */
+  }
+  /* Stroke lines effect animation */
+  .stroke-lines:before {
+    position: absolute;
+    z-index: 4;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-animation: bg-move 2s linear infinite;
+    animation: bg-move 2s linear infinite;
+    background-size: 100% 8px;
+    background-image: -webkit-linear-gradient(
+      0,
+      rgba(255, 255, 255, 0.05) 10%,
+      transparent 10%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0.05) 60%,
+      transparent 60%,
+      transparent
+    );
+    background-image: linear-gradient(
+      0,
+      rgba(255, 255, 255, 0.05) 10%,
+      transparent 10%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0.05) 60%,
+      transparent 60%,
+      transparent
+    );
+  }
+  /* Glitch Effect Animation */
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-0, 501px);
+    }
+    40% {
+      transform: translate(0, -501px);
+    }
+    60% {
+      transform: translate(-0, 501px);
+    }
+    80% {
+      transform: translate(0, -501px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+  
+  
+  /* Fade-in Animation */
+  .fades-in {
+    opacity: 0;
+    color: azure;
+    animation: fadeIn ease-in 1;
+    animation-fill-mode: forwards;
+    animation-duration: 4s;
+    animation-delay: 1s; /* Delay of 1 second before animation starts */
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* THE HOME PAGE OF THE APPLICATION */
+  
+  /* .main-title {
+    font-family: kwark;
+    font-size: 80px;
+  } */
+  
+  .press-start {
+    font-family: arcade;
+    font-size: 50px;
+    margin-top: 1em;
+}
+
+  .logo{
+    width: 50em;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .logo{
+        width: 20em;
+      }
+      .newsletter-body {
+        background-color: green;
+        height: 8em;
+        width: 20em;
+        z-index: 900;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        margin-top: 16em;
+    }
+  }
+
+  .copyrights{
+      font-family: azonix;
+  }
+  
+  .startBox {
+    bottom: 15em;
+    position: relative;
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .blinking-text {
+    animation: blink 1s infinite; /* Adjust the duration as needed */
+  }
+  .glitchs{
+      animation: glitch 0.5s 0s
+    }
+  
+  /* this a preset class names that can be used */
+  .cursor {
+    cursor: pointer;
+  }
+  .arcadex{
+      font-family: "arcade";
+  }
+  
+ 
+  
+  .azonix{
+      font-family: azonix;
+  }
+  
+  .line{
+      width: 40%;
+  }
+  
+   /* Define animation keyframes */
+   /* @keyframes color-cycle {
+      0% { color: rgba(14, 14, 209, 0.575); }
+      25% { color: rgb(255, 255, 255); }
+      50% { color: green; }
+      75% { color: orange; }
+      100% { color: rgba(45, 45, 129, 0.479); }
+    } */
+  
+    /* Apply animation to text */
+    .color-transition {
+      animation: color-cycle 15s infinite; /* Duration and repetition */
+    }
+  
+    /* ABOUT SECTION OF THE APPLICATION */
+    .blinking-texts {
+      opacity: 0; /* Initially hide the text */
+      transition: opacity 0.9s; /* Add transition for smooth effect */
+    }
+    
+    .cursor:hover .blinking-texts {
+      opacity: 1; /* Show the text on hover of the h1 tag */
+    }
+  
+    /* community */
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: black; /* Adjust background color as needed */
+      padding: 20px; /* Adjust padding as needed */
+      box-sizing: border-box; /* Ensure padding is included in width calculation */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+  
+    /* HOME SECTION OF THE APPKLUCATION */
+    /* .theTitleHead{
+      height: 4em;
+    } */
+  
+    .modal-dialog{
+      border-radius: 1em;
+      height: 30em;
+    }
+  
+    #homeBody {
+      background-image: url('../images/home-background-2.gif');
+      background-size: cover;
+      width: 100%;
+      z-index: -99;
+      /* background-color: rgba(0, 0, 0, 0.8); */
+    }
+    /* #homeBody::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: -99;
+    } */
+  
+    /*  */
+  
+    /* forum */
+    .boxForum {
+      width: 100%;
+      height: 33em;
+      background-color: rgb(5, 85, 177);
+      margin-top: 4em;
+      border-bottom-left-radius: 25px;
+      border-top-right-radius: 25px;
+    }
+  
+    .commentSections {
+      background-color: white;
+      width: 100%;
+      height: 23em;
+    }
+  
+    /* .pics {
+      background-color: red;
+      width: 60px;
+      height: 60px;
+      border-radius: 50px;
+    } */
+  
+    .mainForumParent{
+      background-image: url("../images/forum-bg.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+    }
+    .chatPlace {
+      display: flex;
+      align-items: center; /* Vertically center align items */
+    }
+    
+    .pics {
+      flex: 0 0 auto; /* Allow content to shrink but not grow */
+      width: 50px; /* Adjust width as needed */
+      height: 50px; /* Adjust height as needed */
+      background-color: #ccc; /* Placeholder color */
+      border-radius: 50%; /* Make it circular */
+      margin-right: 10px; /* Add some space between elements */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .comentBody {
+      flex: 1; /* Allow content to grow to fill available space */
+      font-size: 13px;
+    }
+    
+   .pluto{
+    position: relative;
+    bottom: 31px;
+   }
+   .homeSlider {
+    z-index: 800;
+    position: relative;
+    text-align: center;
+    top: 1.9em;
+    width: 30em;
+}
+
+   .newsletter-body {
+    background-color: rgba(7, 73, 7, 0.966);
+    height: 8em;
+    width: 48em;
+    z-index: 900;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin-top: 16em;
+    border-radius: 2em;
+}
+
+input {
+    border: 2.1px solid rgb(255, 255, 255);
+    outline: none;
+    width: 28em;
+    margin-top: 1.1em;
+    height: 3em;
+    border-radius: 7px;
+    padding-left: 1em;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+}
+button{
+    border: 2.1px solid white;
+    background-color: transparent;
+    outline: none;
+}
+input:focus{
+    background-color: transparent;
+}
+
+@media only screen and (max-width: 600px) {
+    .logo{
+        width: 20em;
+      }
+      .newsletter-body {
+        background-color: rgba(7, 71, 7, 0.966);
+        height: 8em;
+        width: 20em;
+        z-index: 900;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        margin-top: 16em;
+    }
+  }
